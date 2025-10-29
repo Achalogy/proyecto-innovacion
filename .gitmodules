@@ -1,12 +1,12 @@
 [submodule "back"]
 	path = back
-	url = ./back
+	url = https://github.com/achalogy/pm-back
 [submodule "front"]
 	path = front
-	url = ./front
+	url = https://github.com/achalogy/pm-front
 [submodule "db"]
 	path = db
-	url = ./db
+	url = https://github.com/achalogy/pm-db
 [submodule "bruno"]
 	path = bruno
-	url = ./bruno
+	url = https://github.com/achalogy/pm-bruno
