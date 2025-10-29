@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: gBffb9TKw7QzBgWod73fA
       POSTGRES_DB: pg
     ports:
-      - "5444:5432"
+      - 5454:5432
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     networks:
@@ -31,7 +31,7 @@ services:
     ports:
       - 8810:4321
     env_file:
-      - ./front/.env.prod
+      - ./front/.env
     build:
       context: ./front
       dockerfile: Dockerfile
