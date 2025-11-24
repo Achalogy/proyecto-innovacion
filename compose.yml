@@ -16,6 +16,7 @@ services:
       - pg
     profiles:
       - database
+      - all
   backend:
     container_name: back_pg
     build:
