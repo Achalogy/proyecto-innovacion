@@ -1,6 +1,6 @@
 name: Proyecto de Innovacion y Emprendimiento
 services:
-  db:
+  psql-db:
     image: postgres:17
     container_name: postgres_pg
     restart: always
@@ -14,18 +14,20 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
     networks:
       - pg
+    profiles:
+      - database
   backend:
     container_name: back_pg
     build:
       context: ./back
-    depends_on:
-      - db
     env_file:
       - ./back/.env
     ports:
       - 5000:5000
     networks:
       - pg
+    profiles:
+      - all
   front:
     container_name: front_pg
     ports:
@@ -37,6 +39,8 @@ services:
       dockerfile: Dockerfile
     networks:
       - pg
+    profiles:
+      - all
 
 networks:
   pg:
